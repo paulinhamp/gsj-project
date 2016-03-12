@@ -7,30 +7,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class BeeActivity extends AppCompatActivity {
+public class BallActivity extends AppCompatActivity {
 
     private boolean firstOk;
     private boolean secondOk;
     private boolean thirdOk;
     private boolean fourthOk;
-    private boolean fifthOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bee);
+        setContentView(R.layout.activity_ball);
         this.firstOk = false;
         this.secondOk = false;
         this.thirdOk = false;
         this.fourthOk = false;
-        this.fifthOk = false;
     }
 
     public void putFirst(View view) {
         if (!this.isFirstOk()) {
-            TextView textView = (TextView) findViewById(R.id.first_bee);
+            TextView textView = (TextView) findViewById(R.id.first_ball);
             textView.setText(view.getTag().toString());
-            if (view.getTag().toString().equals("A")) {
+            if (view.getTag().toString().equals("B")) {
                 textView.setTextColor(Color.rgb(0, 153, 0));
                 this.setFirstOk(true);
                 return;
@@ -38,9 +36,9 @@ public class BeeActivity extends AppCompatActivity {
             textView.setTextColor(Color.rgb(179, 4, 4));
         }
         if(this.isFirstOk() && !this.isSecondOk()){
-            TextView textView = (TextView) findViewById(R.id.second_bee);
+            TextView textView = (TextView) findViewById(R.id.second_ball);
             textView.setText(view.getTag().toString());
-            if (view.getTag().toString().equals("B")) {
+            if (view.getTag().toString().equals("O")) {
                 textView.setTextColor(Color.rgb(0,153,0));
                 this.setSecondOk(true);
                 return;
@@ -48,9 +46,9 @@ public class BeeActivity extends AppCompatActivity {
             textView.setTextColor(Color.rgb(179, 4, 4));
         }
         if(this.isFirstOk() && this.isSecondOk() && !this.isThirdOk()){
-            TextView textView = (TextView) findViewById(R.id.third_bee);
+            TextView textView = (TextView) findViewById(R.id.third_ball);
             textView.setText(view.getTag().toString());
-            if (view.getTag().toString().equals("E")) {
+            if (view.getTag().toString().equals("L")) {
                 textView.setTextColor(Color.rgb(0,153,0));
                 this.setThirdOk(true);
                 return;
@@ -58,34 +56,14 @@ public class BeeActivity extends AppCompatActivity {
             textView.setTextColor(Color.rgb(179, 4, 4));
         }
         if(this.isFirstOk() && this.isSecondOk() && this.isThirdOk() && !this.isFourthOk()){
-            TextView textView = (TextView) findViewById(R.id.fourth_bee);
-            textView.setText(view.getTag().toString());
-            if (view.getTag().toString().equals("L")) {
-                textView.setTextColor(Color.rgb(0,153,0));
-                this.setFourthOk(true);
-                return;
-            }
-            textView.setTextColor(Color.rgb(179, 4, 4));
-        }
-
-        if(this.isFirstOk() && this.isSecondOk() && this.isThirdOk() && this.isFourthOk() && !this.isFifthOk()){
-            TextView textView = (TextView) findViewById(R.id.fifth_bee);
-            textView.setText(view.getTag().toString());
-            if (view.getTag().toString().equals("H")) {
-                textView.setTextColor(Color.rgb(0,153,0));
-                this.setFifthOk(true);
-                return;
-            }
-            textView.setTextColor(Color.rgb(179, 4, 4));
-        }
-
-        if(this.isFirstOk() && this.isSecondOk() && this.isThirdOk() && this.isFourthOk() && this.isFifthOk()){
-            TextView textView = (TextView) findViewById(R.id.sixth_bee);
+            TextView textView = (TextView) findViewById(R.id.fourth_ball);
             textView.setText(view.getTag().toString());
             if (view.getTag().toString().equals("A")) {
-                textView.setTextColor(Color.rgb(0, 153, 0));
-                Intent intent = new Intent(this, FinalActivity.class);
+                textView.setTextColor(Color.rgb(0,153,0));
+                Intent intent = new Intent(this, CongratulationsActivity.class);
+                intent.putExtra(CongratulationsActivity.NEXT_KEY, CarActivity.class);
                 startActivity(intent);
+                this.setFourthOk(true);
                 return;
             }
             textView.setTextColor(Color.rgb(179, 4, 4));
@@ -122,13 +100,5 @@ public class BeeActivity extends AppCompatActivity {
 
     public void setFourthOk(boolean fourthOk) {
         this.fourthOk = fourthOk;
-    }
-
-    public boolean isFifthOk() {
-        return fifthOk;
-    }
-
-    public void setFifthOk(boolean fifthOk) {
-        this.fifthOk = fifthOk;
     }
 }

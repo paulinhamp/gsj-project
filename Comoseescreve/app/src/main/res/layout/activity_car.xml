@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:text="   "
                 android:textSize="70sp"
-                android:id="@+id/first"/>
+                android:id="@+id/first_car"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="   "
                 android:textSize="70sp"
-                android:id="@+id/sec"/>
+                android:id="@+id/second_car"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -167,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:text="   "
                 android:textSize="70sp"
-                android:id="@+id/th"/>
+                android:id="@+id/third_car"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -188,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:text="   "
                 android:textSize="70sp"
-                android:id="@+id/fh"/>
+                android:id="@+id/fourth_car"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:text="   "
                 android:textSize="70sp"
-                android:id="@+id/five"/>
+                android:id="@+id/fifth_car"/>
 
             <View
                 android:layout_width="fill_parent"
